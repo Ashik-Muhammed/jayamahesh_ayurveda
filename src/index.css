@@ -1,0 +1,648 @@
+/* ==========================================================================
+   Jayamahesh Ayurveda & Wellness Center - Master Ultra-Luxury Design System
+   Palakkad Heritage Lineage • Kerala Ayurvedic Sanctuary
+   ========================================================================== */
+
+:root {
+  /* Official Logo Brand Color Palette */
+  --color-brand-emerald: #0B823D;
+  --color-brand-emerald-dark: #075E2B;
+  --color-brand-lime: #8DC63F;
+  --color-brand-lime-light: #A4E24A;
+  --color-brand-lime-subtle: rgba(141, 198, 63, 0.15);
+  --color-brand-forest: #0D2E24;
+  --color-brand-sage: #4E6857;
+
+  /* Imperial Kerala Heritage Color Palette */
+  --color-forest-black: #051410;
+  --color-forest-deep: #081F18;
+  --color-forest-green: #0E2E24;
+  --color-forest-rich: #154133;
+  --color-forest-light: #215947;
+  --color-forest-subtle: #2C6E59;
+  
+  /* Antique & Metallic Ayurvedic Gold */
+  --color-gold-deep: #8E6822;
+  --color-gold-turmeric: #C59A44;
+  --color-gold-warm: #E4C078;
+  --color-gold-bright: #F5D794;
+  --color-gold-light: #F9EEDB;
+  --color-gold-glass: rgba(197, 154, 68, 0.12);
+  --color-gold-border: rgba(197, 154, 68, 0.28);
+  --color-gold-border-strong: rgba(197, 154, 68, 0.55);
+
+  /* Warm Alabaster, Ivory & Papyrus */
+  --color-paper-white: #FAF8F5;
+  --color-cream-warm: #F4EFE6;
+  --color-cream-sand: #EDE5D6;
+  --color-cream-card: #FFFFFF;
+  --color-pure-white: #FFFFFF;
+
+  /* Typography & Neutral Shades */
+  --color-text-main: #142822;
+  --color-text-muted: #5C6E66;
+  --color-text-soft: #85968E;
+  --color-text-light: #F3EFE6;
+  --color-border-soft: rgba(197, 154, 68, 0.2);
+  --color-border-green: rgba(14, 46, 36, 0.1);
+
+  /* Typography Families */
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Premium Multi-Layer Shadows */
+  --shadow-subtle: 0 4px 20px -2px rgba(8, 31, 24, 0.05);
+  --shadow-card: 0 12px 35px -6px rgba(8, 31, 24, 0.07), 0 2px 8px rgba(8, 31, 24, 0.03);
+  --shadow-hover: 0 24px 48px -10px rgba(8, 31, 24, 0.14), 0 8px 16px rgba(197, 154, 68, 0.1);
+  --shadow-gold: 0 10px 30px -4px rgba(197, 154, 68, 0.35);
+  --shadow-gold-hover: 0 16px 38px -4px rgba(197, 154, 68, 0.5);
+  --shadow-modal: 0 30px 80px -15px rgba(5, 20, 16, 0.45);
+  --shadow-glow: 0 0 25px rgba(228, 192, 120, 0.3);
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+  --radius-full: 9999px;
+
+  /* Smooth Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Smoothness */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper-white);
+  color: var(--color-text-main);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Selection Highlight */
+::selection {
+  background: var(--color-gold-warm);
+  color: var(--color-forest-deep);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-forest-deep);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+}
+
+h1 i, h2 i, h3 i, .font-serif-italic {
+  font-style: italic;
+  font-family: var(--font-heading);
+  color: var(--color-gold-turmeric);
+  font-weight: 500;
+}
+
+p {
+  color: var(--color-text-main);
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Custom Heritage Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #EFE9DE;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-gold-turmeric) 0%, #A47D2E 100%);
+  border-radius: 6px;
+  border: 2px solid #EFE9DE;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest-rich);
+}
+
+/* ==========================================================================
+   Luxury Button Components
+   ========================================================================== */
+
+/* 1. Gold Metallic Shimmer Button */
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #DFB76C 0%, #C59A44 50%, #9F7626 100%);
+  color: #081F18;
+  padding: 14px 30px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  box-shadow: 0 8px 24px -2px rgba(197, 154, 68, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ECC97D 0%, #D4A853 50%, #B0842E 100%);
+  box-shadow: 0 12px 32px rgba(197, 154, 68, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.btn-gold:hover::before {
+  left: 100%;
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(197, 154, 68, 0.35);
+}
+
+/* 2. Forest Green Imperial Button */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #154133 0%, #081F18 100%);
+  color: #FAF8F5;
+  padding: 14px 30px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px -2px rgba(8, 31, 24, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(197, 154, 68, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1C5442 0%, #0E2E24 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(8, 31, 24, 0.4);
+  border-color: var(--color-gold-warm);
+  color: #FFFFFF;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* 3. Refined Outlined Buttons */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  color: var(--color-forest-deep);
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--color-forest-rich);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--color-forest-deep);
+  color: var(--color-gold-warm);
+  border-color: var(--color-forest-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(8, 31, 24, 0.15);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(197, 154, 68, 0.06);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold-warm);
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--color-gold-turmeric);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline-gold:hover {
+  background: linear-gradient(135deg, #DFB76C 0%, #C59A44 100%);
+  color: #081F18;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(197, 154, 68, 0.35);
+}
+
+/* ==========================================================================
+   Luxury Cards & Glassmorphism
+   ========================================================================== */
+
+.ayur-card {
+  background: var(--color-cream-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.ayur-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-turmeric), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ayur-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(197, 154, 68, 0.45);
+}
+
+.ayur-card:hover::after {
+  opacity: 1;
+}
+
+.ayur-card-cream {
+  background: linear-gradient(145deg, #FAF7F0 0%, #F3EDE0 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(197, 154, 68, 0.22);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ayur-card-cream:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold-turmeric);
+  box-shadow: var(--shadow-card);
+}
+
+/* Dark Glassmorphism for Luxury Immersion Sections */
+.luxury-dark-card {
+  background: rgba(14, 46, 36, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(197, 154, 68, 0.32);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-dark-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold-warm);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 0 25px rgba(197, 154, 68, 0.2);
+}
+
+/* ==========================================================================
+   Badges, Ribbons & Section Tags
+   ========================================================================== */
+
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, rgba(197, 154, 68, 0.15) 0%, rgba(197, 154, 68, 0.08) 100%);
+  color: #8E6822;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(197, 154, 68, 0.35);
+  box-shadow: 0 2px 8px rgba(197, 154, 68, 0.08);
+}
+
+.badge-forest {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(14, 46, 36, 0.08);
+  color: var(--color-forest-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(14, 46, 36, 0.2);
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-gold-deep);
+  margin-bottom: 12px;
+}
+
+.section-tag::before, .section-tag::after {
+  content: '';
+  width: 20px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-turmeric));
+  display: inline-block;
+}
+.section-tag::after {
+  background: linear-gradient(90deg, var(--color-gold-turmeric), transparent);
+}
+
+.gold-divider {
+  width: 65px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold-turmeric) 0%, transparent 100%);
+  margin: 16px 0;
+}
+
+.gold-divider-center {
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-gold-turmeric) 50%, transparent 100%);
+  margin: 20px auto;
+  position: relative;
+}
+
+.gold-divider-center::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  color: var(--color-gold-turmeric);
+  background: var(--color-paper-white);
+  padding: 0 4px;
+}
+
+/* ==========================================================================
+   Luxury Form Controls
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-forest-deep);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1.5px solid #D9E2DC;
+  border-radius: var(--radius-sm);
+  font-size: 0.96rem;
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--color-gold-turmeric);
+  box-shadow: 0 0 0 4px rgba(197, 154, 68, 0.18);
+  background: #FFFFFF;
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--color-text-soft);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Interactive Ayurvedic Quiz & Sanctuary Elements
+   ========================================================================== */
+
+.dosha-tab-btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.dosha-tab-btn.active {
+  background: var(--color-forest-deep);
+  color: var(--color-gold-warm);
+  border-color: var(--color-gold-turmeric);
+  box-shadow: 0 6px 20px rgba(8, 31, 24, 0.2);
+}
+
+.dosha-tab-btn:not(.active) {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-main);
+  border-color: rgba(197, 154, 68, 0.3);
+}
+
+.dosha-tab-btn:not(.active):hover {
+  background: #FFFFFF;
+  border-color: var(--color-gold-turmeric);
+  color: var(--color-forest-deep);
+}
+
+/* Pulsing Status Beacon */
+.status-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  position: relative;
+  display: inline-block;
+}
+
+.status-beacon::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.4);
+  animation: beaconPulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes beaconPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Subtle Shimmer Animation */
+@keyframes shimmerWave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  animation: shimmerWave 3.5s infinite;
+}
+
+/* Floating animation */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.animate-float {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+/* Fade in with smooth spring feel */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 2.3rem !important;
+  }
+  h2 {
+    font-size: 1.85rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-gold, .btn-primary, .btn-outline {
+    width: 100%;
+    padding: 13px 20px;
+  }
+}
